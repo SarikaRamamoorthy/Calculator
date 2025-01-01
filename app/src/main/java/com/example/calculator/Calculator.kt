@@ -25,11 +25,11 @@ import com.example.calculator.ui.theme.Orange
 @Composable
 fun Calculator(
     state: CalculatorState,
-    modifier: Modifier = Modifier,
+    modifier: Modifier,
     buttonSpacing: Dp = 8.dp,
     onAction: (CalculatorAction) -> Unit
 ) {
-    Box(modifier = Modifier) {
+    Box(modifier = modifier) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
@@ -37,7 +37,7 @@ fun Calculator(
             verticalArrangement = Arrangement.spacedBy(buttonSpacing)
         ) {
             Text(
-                text = state.number1 + (state.operator ?: "") + state.number2,
+                text = state.number1 + (state.operator?.symbol ?: "") + state.number2,
                 textAlign = TextAlign.End,
                 fontSize = 80.sp,
                 fontWeight = FontWeight.Light,
@@ -45,7 +45,7 @@ fun Calculator(
                 maxLines = 2,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 32.dp)
+                    .padding(vertical = 40.dp)
             )
             Row(
                 modifier = Modifier.fillMaxWidth(),
@@ -53,8 +53,9 @@ fun Calculator(
             ) {
                 CalculatorButton(
                     symbol = "AC",
+                    color = Color.Black,
                     modifier = Modifier
-                        .background(LightGray)
+                        .background(Color.White)
                         .aspectRatio(2f) // width = 2 times the height
                         .weight(2f), // 2 part of the row width
                     onClick = {
@@ -63,6 +64,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "Del",
+                    color = Color.White,
                     modifier = Modifier
                         .background(LightGray)
                         .aspectRatio(1f)
@@ -73,6 +75,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "/",
+                    color = Color.White,
                     modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
@@ -88,6 +91,7 @@ fun Calculator(
             ) {
                 CalculatorButton(
                     symbol = "7",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -98,6 +102,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "8",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -108,6 +113,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "9",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -117,7 +123,8 @@ fun Calculator(
                     }
                 )
                 CalculatorButton(
-                    symbol = "*",
+                    symbol = "x",
+                    color = Color.White,
                     modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
@@ -133,6 +140,7 @@ fun Calculator(
             ) {
                 CalculatorButton(
                     symbol = "4",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -143,6 +151,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "5",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -153,6 +162,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "6",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -163,6 +173,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "-",
+                    color = Color.White,
                     modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
@@ -178,6 +189,7 @@ fun Calculator(
             ) {
                 CalculatorButton(
                     symbol = "1",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -188,6 +200,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "2",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -198,6 +211,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "3",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -208,6 +222,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "+",
+                    color = Color.White,
                     modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)
@@ -223,6 +238,7 @@ fun Calculator(
             ) {
                 CalculatorButton(
                     symbol = "0",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(2f)
@@ -233,6 +249,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = ".",
+                    color = Color.White,
                     modifier = Modifier
                         .background(MediumGray)
                         .aspectRatio(1f)
@@ -243,6 +260,7 @@ fun Calculator(
                 )
                 CalculatorButton(
                     symbol = "=",
+                    color = Color.White,
                     modifier = Modifier
                         .background(Orange)
                         .aspectRatio(1f)

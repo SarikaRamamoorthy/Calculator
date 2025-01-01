@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.sp
 fun CalculatorButton(
     modifier: Modifier = Modifier,
     symbol: String,
+    color: Color,
     onClick: () ->  Unit // respond to click event outside the button and to send the event to the view model
 ) {
     Box(
@@ -26,8 +27,8 @@ fun CalculatorButton(
     ) {
         Text(
             text = symbol,
-            color = Color.White,
-            fontSize = 36.sp
+            color = color,
+            fontSize = 32.sp
         )
     }
 }
